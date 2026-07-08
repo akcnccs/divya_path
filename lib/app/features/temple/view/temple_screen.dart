@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:divya_path/utils/app_them.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
-import '../utils/app_images.dart';
+import '../../../../utils/app_images.dart';
 
 class TempleScreen extends StatelessWidget {
   const TempleScreen({super.key});

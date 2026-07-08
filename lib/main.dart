@@ -12,9 +12,7 @@ import 'package:divya_path/app/features/dashboard/view/dashboard_screen.dart';
 import 'package:divya_path/app/features/dashboard/controller/dashboard_controller.dart';
 import 'package:divya_path/app_service/network/network_service.dart';
 import 'package:divya_path/app_service/notification/notification_service.dart';
-import 'package:divya_path/app_service/stripe/stripe_config.dart';
 import 'package:divya_path/app_service/translations/app_translations.dart';
-import 'firebase_options.dart';
 
 SpUtil? sp;
 
@@ -50,10 +48,9 @@ void main() async {
     ),
   );
 
-  await StripeConfig.initialize();
-
   // Initialize GetX Controllers
-  Get.put(DashboardController());
+
+  Get.put(const GetStartedScreen());
 
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then((
     _,

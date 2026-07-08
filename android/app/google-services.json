@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "642552583003",
-    "project_id": "divya-path-app",
-    "storage_bucket": "divya-path-app.firebasestorage.app"
+    "project_number": "651349045040",
+    "project_id": "divya-path-new-app",
+    "storage_bucket": "divya-path-new-app.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:642552583003:android:04f65b6248aa0fc0ea807e",
+        "mobilesdk_app_id": "1:651349045040:android:56384f1d007f7c7ebd22f5",
         "android_client_info": {
           "package_name": "com.example.divya_path"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDEAF3r5ffOfu4Il0awSIRuWIibqugygB4"
+          "current_key": "AIzaSyCbmFiyjBRqvFq5bVqLuBkNyg70FKnf6Tg"
         }
       ],
       "services": {

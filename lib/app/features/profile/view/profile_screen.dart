@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import '../models/models.dart';
+import '../../../../models/models.dart';
 import 'package:divya_path/utils/app_them.dart';
 
 class ProfileScreen extends StatelessWidget {

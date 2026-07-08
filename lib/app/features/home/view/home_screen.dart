@@ -1,7 +1,9 @@
+import 'package:divya_path/app/features/home/view/widgets/home_app_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import '../models/models.dart';
 import 'package:divya_path/utils/app_them.dart';
+
+import '../../../../models/models.dart';
 
 class HomeScreen extends StatelessWidget {
   final UserProfile user;
@@ -22,22 +24,25 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildHeader(context),
+              const HomeAppBarWidget(
+                name: 'Vinay',
+                image: '',
+              ),
               const SizedBox(height: 24),
-              _buildSearchBar(context),
+              buildSearchBar(context),
               const SizedBox(height: 24),
-              _buildStatsGrid(),
+              buildStatsGrid(),
               const SizedBox(height: 24),
-              _buildPanchangCard(context),
+              buildPanchangCard(context),
               // const SizedBox(height: 24),
               // _buildAskKrishna(context),
               const SizedBox(height: 24),
-              _buildSpiritualAudios(context),
+              buildSpiritualAudios(context),
               const SizedBox(height: 24),
-              _buildLiveDarshan(context),
+              buildLiveDarshan(context),
               const SizedBox(height: 24),
-              _buildCharityBanner(context),
-              const SizedBox(height: 100), // Bottom padding for navigation
+              buildCharityBanner(context),
+              const SizedBox(height: 100),
             ],
           ),
         ),
@@ -45,7 +50,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildHeader(BuildContext context) {
+  Widget buildHeader(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -104,7 +109,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSearchBar(BuildContext context) {
+  Widget buildSearchBar(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       decoration: BoxDecoration(
@@ -127,7 +132,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildStatsGrid() {
+  Widget buildStatsGrid() {
     return Row(
       children: [
         Expanded(
@@ -195,7 +200,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildPanchangCard(BuildContext context) {
+  Widget buildPanchangCard(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
@@ -305,7 +310,7 @@ class HomeScreen extends StatelessWidget {
   //   );
   // }
 
-  Widget _buildSpiritualAudios(BuildContext context) {
+  Widget buildSpiritualAudios(BuildContext context) {
     return Column(
       children: [
         Row(
@@ -356,7 +361,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildLiveDarshan(BuildContext context) {
+  Widget buildLiveDarshan(BuildContext context) {
     return Container(
       height: 200,
       width: double.infinity,
@@ -417,7 +422,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildCharityBanner(BuildContext context) {
+  Widget buildCharityBanner(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
