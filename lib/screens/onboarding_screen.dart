@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lucide_icons_flutter/lucide_icons_flutter.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:divya_path/utils/app_them.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});

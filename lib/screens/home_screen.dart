@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lucide_icons_flutter/lucide_icons_flutter.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
 import '../models/models.dart';
 import 'package:divya_path/utils/app_them.dart';
 
@@ -8,8 +8,8 @@ class HomeScreen extends StatelessWidget {
   final PanchangData panchang;
 
   const HomeScreen({
-    super.key, 
-    required this.user, 
+    super.key,
+    required this.user,
     required this.panchang,
   });
 
@@ -29,8 +29,8 @@ class HomeScreen extends StatelessWidget {
               _buildStatsGrid(),
               const SizedBox(height: 24),
               _buildPanchangCard(context),
-              const SizedBox(height: 24),
-              _buildAskKrishna(context),
+              // const SizedBox(height: 24),
+              // _buildAskKrishna(context),
               const SizedBox(height: 24),
               _buildSpiritualAudios(context),
               const SizedBox(height: 24),
@@ -64,7 +64,10 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 4),
             RichText(
               text: TextSpan(
-                style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineSmall
+                    ?.copyWith(fontWeight: FontWeight.bold),
                 children: [
                   const TextSpan(text: "Namaste, "),
                   TextSpan(
@@ -91,7 +94,8 @@ class HomeScreen extends StatelessWidget {
                   color: AppTheme.primaryOrange,
                   shape: BoxShape.circle,
                 ),
-                child: Icon(LucideIcons.award, size: 12, color: Colors.white),
+                child: const Icon(LucideIcons.award,
+                    size: 12, color: Colors.white),
               ),
             ),
           ],
@@ -151,7 +155,8 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildStatCard(IconData icon, String title, String value, String unit, String sub, Color color) {
+  Widget _buildStatCard(IconData icon, String title, String value, String unit,
+      String sub, Color color) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -170,17 +175,21 @@ class HomeScreen extends StatelessWidget {
             children: [
               Text(
                 value,
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const SizedBox(width: 4),
               Text(
                 unit,
-                style: TextStyle(fontSize: 10, color: color, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    fontSize: 10, color: color, fontWeight: FontWeight.bold),
               ),
             ],
           ),
           const SizedBox(height: 4),
-          Text(title, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600)),
+          Text(title,
+              style:
+                  const TextStyle(fontSize: 12, fontWeight: FontWeight.w600)),
         ],
       ),
     );
@@ -203,7 +212,8 @@ class HomeScreen extends StatelessWidget {
         children: [
           Row(
             children: [
-            Icon(LucideIcons.calendarDays, color: AppTheme.primaryOrange, size: 18),
+              Icon(LucideIcons.calendarDays,
+                  color: AppTheme.primaryOrange, size: 18),
               const SizedBox(width: 8),
               Text(
                 "TODAY'S SACRED PANCHANG",
@@ -243,52 +253,57 @@ class HomeScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label.toUpperCase(), style: const TextStyle(fontSize: 9, color: Colors.grey)),
-        Text(value, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+        Text(label.toUpperCase(),
+            style: const TextStyle(fontSize: 9, color: Colors.grey)),
+        Text(value,
+            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
       ],
     );
   }
 
-  Widget _buildAskKrishna(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
-        borderRadius: BorderRadius.circular(22),
-        border: Border.all(color: AppTheme.primaryOrange.withOpacity(0.1)),
-      ),
-      child: Row(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(50),
-            child: Image.network(
-              "https://images.unsplash.com/photo-1590076214561-20573908db48?q=80&w=300&auto=format&fit=crop",
-              width: 60,
-              height: 60,
-              fit: BoxFit.cover,
-            ),
-          ),
-          const SizedBox(width: 16),
-          const Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "\"Perform your duty with a calm mind...\"",
-                  style: TextStyle(fontSize: 12, fontStyle: FontStyle.italic),
-                ),
-                SizedBox(height: 8),
-                Text(
-                  "ASK KRISHNA",
-                  style: TextStyle(color: AppTheme.primaryOrange, fontWeight: FontWeight.bold, fontSize: 10),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+  // Widget _buildAskKrishna(BuildContext context) {
+  //   return Container(
+  //     padding: const EdgeInsets.all(16),
+  //     decoration: BoxDecoration(
+  //       color: Theme.of(context).cardColor,
+  //       borderRadius: BorderRadius.circular(22),
+  //       border: Border.all(color: AppTheme.primaryOrange.withOpacity(0.1)),
+  //     ),
+  //     child: Row(
+  //       children: [
+  //         ClipRRect(
+  //           borderRadius: BorderRadius.circular(50),
+  //           child: Image.network(
+  //             "https://images.unsplash.com/photo-1590076214561-20573908db48?q=80&w=300&auto=format&fit=crop",
+  //             width: 60,
+  //             height: 60,
+  //             fit: BoxFit.cover,
+  //           ),
+  //         ),
+  //         const SizedBox(width: 16),
+  //         const Expanded(
+  //           child: Column(
+  //             crossAxisAlignment: CrossAxisAlignment.start,
+  //             children: [
+  //               Text(
+  //                 "\"Perform your duty with a calm mind...\"",
+  //                 style: TextStyle(fontSize: 12, fontStyle: FontStyle.italic),
+  //               ),
+  //               SizedBox(height: 8),
+  //               Text(
+  //                 "ASK KRISHNA",
+  //                 style: TextStyle(
+  //                     color: AppTheme.primaryOrange,
+  //                     fontWeight: FontWeight.bold,
+  //                     fontSize: 10),
+  //               ),
+  //             ],
+  //           ),
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
 
   Widget _buildSpiritualAudios(BuildContext context) {
     return Column(
@@ -296,7 +311,8 @@ class HomeScreen extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text("Spiritual Audios", style: TextStyle(fontWeight: FontWeight.bold)),
+            const Text("Spiritual Audios",
+                style: TextStyle(fontWeight: FontWeight.bold)),
             TextButton(onPressed: () {}, child: const Text("View All")),
           ],
         ),
@@ -317,14 +333,19 @@ class HomeScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
                         image: const DecorationImage(
-                          image: NetworkImage("https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?q=80&w=400"),
+                          image: NetworkImage(
+                              "https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?q=80&w=400"),
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
                     const SizedBox(height: 8),
-                    const Text("Shiva Tandava", style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold), maxLines: 1),
-                    const Text("Traditional", style: TextStyle(fontSize: 10, color: Colors.grey)),
+                    const Text("Shiva Tandava",
+                        style: TextStyle(
+                            fontSize: 12, fontWeight: FontWeight.bold),
+                        maxLines: 1),
+                    const Text("Traditional",
+                        style: TextStyle(fontSize: 10, color: Colors.grey)),
                   ],
                 ),
               );
@@ -342,7 +363,8 @@ class HomeScreen extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24),
         image: const DecorationImage(
-          image: NetworkImage("https://images.unsplash.com/photo-1626645607073-7e289bf67246?q=80&w=800"),
+          image: NetworkImage(
+              "https://images.unsplash.com/photo-1626645607073-7e289bf67246?q=80&w=800"),
           fit: BoxFit.cover,
         ),
       ),
@@ -354,7 +376,10 @@ class HomeScreen extends StatelessWidget {
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [Colors.black.withOpacity(0.1), Colors.black.withOpacity(0.7)],
+                colors: [
+                  Colors.black.withOpacity(0.1),
+                  Colors.black.withOpacity(0.7)
+                ],
               ),
             ),
           ),
@@ -365,7 +390,11 @@ class HomeScreen extends StatelessWidget {
               children: [
                 CircleAvatar(backgroundColor: Colors.red, radius: 4),
                 SizedBox(width: 4),
-                Text("LIVE", style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold)),
+                Text("LIVE",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 10,
+                        fontWeight: FontWeight.bold)),
               ],
             ),
           ),
@@ -375,8 +404,11 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Kedarnath Shrine", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                Text("Virtual Morning Abhishekam", style: TextStyle(color: Colors.white70, fontSize: 12)),
+                Text("Kedarnath Shrine",
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold)),
+                Text("Virtual Morning Abhishekam",
+                    style: TextStyle(color: Colors.white70, fontSize: 12)),
               ],
             ),
           ),
@@ -401,8 +433,11 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Feed Sacred Cows", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
-                Text("Sponsor fodder at Ram Mandir Gaushala", style: TextStyle(fontSize: 12, color: Colors.grey)),
+                Text("Feed Sacred Cows",
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+                Text("Sponsor fodder at Ram Mandir Gaushala",
+                    style: TextStyle(fontSize: 12, color: Colors.grey)),
               ],
             ),
           ),

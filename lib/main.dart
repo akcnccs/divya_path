@@ -20,9 +20,9 @@ SpUtil? sp;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Note: Firebase initialize might fail if google-services.json is missing, 
+  // Note: Firebase initialize might fail if google-services.json is missing,
   // but we follow the requested structure.
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
   sp = await SpUtil.getInstance();

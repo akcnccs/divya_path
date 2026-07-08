@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lucide_icons_flutter/lucide_icons_flutter.dart';
 import 'package:divya_path/utils/app_them.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 class AiScreen extends StatefulWidget {
   const AiScreen({super.key});

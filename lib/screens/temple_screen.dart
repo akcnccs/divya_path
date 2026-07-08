@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lucide_icons_flutter/lucide_icons_flutter.dart';
 import 'package:divya_path/utils/app_them.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
+
+import '../utils/app_images.dart';
 
 class TempleScreen extends StatelessWidget {
   const TempleScreen({super.key});
@@ -9,7 +11,8 @@ class TempleScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Sacred Temples", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+        title: const Text("Sacred Temples",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
         centerTitle: true,
       ),
       body: ListView(
@@ -43,7 +46,8 @@ class TempleScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildTempleCard(BuildContext context, String name, String location, String imageUrl, bool live) {
+  Widget _buildTempleCard(BuildContext context, String name, String location,
+      String imageUrl, bool live) {
     return Container(
       decoration: BoxDecoration(
         color: Theme.of(context).cardColor,
@@ -62,13 +66,15 @@ class TempleScreen extends StatelessWidget {
         children: [
           Stack(
             children: [
-              Image.network(imageUrl, height: 180, width: double.infinity, fit: BoxFit.cover),
+              Image.asset(AppImages.krishnaImages,
+                  height: 180, width: double.infinity, fit: BoxFit.cover),
               if (live)
                 Positioned(
                   top: 12,
                   left: 12,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
                       color: Colors.red,
                       borderRadius: BorderRadius.circular(12),
@@ -77,7 +83,11 @@ class TempleScreen extends StatelessWidget {
                       children: [
                         Icon(Icons.circle, size: 8, color: Colors.white),
                         SizedBox(width: 4),
-                        Text("LIVE DARSHAN", style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold)),
+                        Text("LIVE DARSHAN",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 10,
+                                fontWeight: FontWeight.bold)),
                       ],
                     ),
                   ),
@@ -89,13 +99,17 @@ class TempleScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(name, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                Text(name,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 16)),
                 const SizedBox(height: 4),
                 Row(
                   children: [
                     Icon(LucideIcons.mapPin, size: 12, color: Colors.grey),
                     const SizedBox(width: 4),
-                    Text(location, style: const TextStyle(color: Colors.grey, fontSize: 12)),
+                    Text(location,
+                        style:
+                            const TextStyle(color: Colors.grey, fontSize: 12)),
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -105,10 +119,12 @@ class TempleScreen extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: AppTheme.primaryOrange.withOpacity(0.1),
+                          backgroundColor:
+                              AppTheme.primaryOrange.withOpacity(0.1),
                           foregroundColor: AppTheme.primaryOrange,
                           elevation: 0,
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12)),
                         ),
                         child: const Text("Book Pooja"),
                       ),
@@ -121,7 +137,8 @@ class TempleScreen extends StatelessWidget {
                           backgroundColor: AppTheme.primaryOrange,
                           foregroundColor: Colors.white,
                           elevation: 0,
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12)),
                         ),
                         child: const Text("View Details"),
                       ),
